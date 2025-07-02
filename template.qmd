@@ -1,13 +1,14 @@
 ---
 title: "Your awesome project title"
 author:
-  name: "You et al"
-  affiliation: "From whence you hail"
+  name: "Anna Howe et al"
+  affiliation: "University of Canterbury"
 date: today
 bibliography: refs.bib
 from: markdown+emoji
 format:
   html:
+    toc: true
     code-fold: false
     link-external-newwindow: true
 theme:
@@ -30,7 +31,19 @@ theme:
 - Give me a :heavy_check_mark: when done or a :hand: if you need help
 :::
 
-# Introduction
+# Introduction {#sec-introduction}
+
+## sub-heading 
+
+### sub-sub-heading
+
+The sulphates $\mathrm{SO_4^{2-}}$
+
+1. item 1
+2. item 2
+3. item 3
+
+Chamberlin @chamberlin1987 says use multiple hypotheses [@chamberlin1897]
 
 :::{.callout-tip}
 # Markdown exercise
@@ -75,10 +88,15 @@ If you want to use Python code check out the documentation [here](https://quarto
 
 ```{r}
 #| label: Libraries
-#| include: true
+#| include: false
+#| echo: false
 
 if (!require("pacman")) install.packages("pacman", repos="http://cran.r-project.org")
 pacman::p_load(ggplot2, palmerpenguins)    # Install & load packages
+```
+```{r}
+data(penguins)
+head(penguins)
 ```
 
 # Tabsets
@@ -95,6 +113,18 @@ pacman::p_load(ggplot2, palmerpenguins)    # Install & load packages
 - render the document and hit the :heavy_check_mark: in zoom
 :::
 
+:::{.panel-tabset}
+
+# tab 1
+```{r}
+head(penguins)
+```
+
+# tab 2
+some text
+
+:::
+
 # Images
 
 :::{.callout-tip}
@@ -105,6 +135,7 @@ pacman::p_load(ggplot2, palmerpenguins)    # Install & load packages
 - render the document and hit the :heavy_check_mark: in zoom
 :::
 
+![XKCD comic](./images/fixing_problems.png){fig-align="left"}
 
 # let'g go Git it
 
